@@ -99,7 +99,7 @@ Moreover, to authenticate I used a Google API to make the sign in process very s
 So the app would have never worked without these two lines. Together, these middleware functions set up Passport.js for user authentication and session management in a Node.js application.
 
 4. **Unit Testing:** This was very hard to understand, I was very confused about my api.test.js, I thought I had to create more unit test cases, so I did and nothing seemed to be working, everything was broken. I met with a tutor and they guided me through what I was supposed to do. I learned that I could use the unit test cases from 4A, all I had to do was change the BaseUrl and the cookie, I also had to make modifications to my tasks.js to print errors when the user did not supply enough data or when the ID was invalid, after making changes to my endpoints the tests run perfectly fine. This is a snip of code I had to add to print the error:
-5. 
+ 
 ![image](https://github.com/Facuu35/MongoDB/assets/17630462/d515a5e0-edc0-489e-ad35-bae4f3f50d29)
 
 
