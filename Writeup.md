@@ -9,7 +9,20 @@ In these two labs, I worked with Node.js to create the structure of a web applic
 ### Design Overview
 To begin with, my project had the following folder structure:
 
-
+```
+app/
+├── models/
+│   ├── Task.js
+│   └── User.js
+└── routes/
+    ├── auth.js
+    └── tasks.js
+    └── user.js
+util/
+└── index.js
+└── mongoose.js
+└── passport.js
+```
 
 
 Each of the files inside of models/ were my Mongoose Schemas. I had a Task.js and a User.js, Schemas are used to validate data that will be passed off to the server, in my case, to my MongoDB server, basically the Schemas hold the data that will be passed to the server. This is an example of my Task.js Schema:
