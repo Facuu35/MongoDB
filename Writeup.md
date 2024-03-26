@@ -33,7 +33,8 @@ Each of the files inside of models/ were my Mongoose Schemas. I had a Task.js an
 Moreover, to authenticate, I used a Google API to simplify the sign-in process. I created an account in Google Cloud and retrieved my keys, secret ID, etc., to use it on my website.
 
 ### UML
-[Insert UML diagram here]
+
+
 Code extract from Task.js
 
 I am defining UserId, Text, Done and Date. Those fields will be passed to the server.
