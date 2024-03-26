@@ -12,12 +12,32 @@ To begin with, my project had the following folder structure:
 
 
 
-Each of the files inside of `models/` were my Mongoose Schemas. For example, `Task.js` defined the schema for tasks that will be passed to the server. Inside of the `routes` folder, I had three files: `auth.js`, `users.js`, and `tasks.js`, which represented my endpoints. These endpoints had method handlers to create, read, update, and delete. The endpoints matched their corresponding Schema objects.
+Each of the files inside of models/ were my Mongoose Schemas. I had a Task.js and a User.js, Schemas are used to validate data that will be passed off to the server, in my case, to my MongoDB server, basically the Schemas hold the data that will be passed to the server. This is an example of my Task.js Schema:
+
+![image](https://github.com/Facuu35/MongoDB/assets/17630462/676d7eca-5139-4132-9a62-69ccbe58ebaa)
+
 
 Moreover, to authenticate, I used a Google API to simplify the sign-in process. I created an account in Google Cloud and retrieved my keys, secret ID, etc., to use it on my website.
 
 ### UML
 [Insert UML diagram here]
+Code extract from Task.js
+
+I am defining UserId, Text, Done and Date. Those fields will be passed to the server.
+Inside of my routes folder I had three files, auth.js, users.js and tasks.js, these are my endpoints, each of my endpoints has its own method handlers, to create, read, update and delete. My endpoints need to match their corresponding Schema objects.
+
+This is an example of my tasks.js:
+![image](https://github.com/Facuu35/MongoDB/assets/17630462/96f27d1a-79ec-48a6-9d7b-249f621faf74)
+Code extract from tasks.js
+
+Note how the task objects match the models Task.js (Mongoose Schema). At this point in my work, all I am intending to do is to display basic information on the web just to make sure everything is working as intended.
+![image](https://github.com/Facuu35/MongoDB/assets/17630462/b27d3437-5292-4a20-9a78-de7d893a00fe)
+This is an screenshot of the user endpoint printing only my user information.
+
+![image](https://github.com/Facuu35/MongoDB/assets/17630462/eb377ff6-a623-439d-9d8c-57e0bab8ed0b)
+This is an screenshot of the tasks enpoint printing only the tasks information.
+
+Moreover, to authenticate I used a Google API to make the sign in process very simple, I created an account in Google Cloud and retrieved my keys, secret ID, etc. to use it in my website.
 
 ### Questions
 
@@ -42,6 +62,15 @@ Moreover, to authenticate, I used a Google API to simplify the sign-in process. 
    - **Improved User Experience:** APIs enhance the user experience by seamlessly integrating third-party services and data sources into applications.
 
 2. **What are the differences between these four HTTP methods: GET, POST, PUT, and DELETE? Which ones are idempotent?**
+
+   **GET:** This method is used to retrieve data from a specified resource. When a client sends a GET request, it requests data from the server without causing any modification to the resource. GET requests are typically used for fetching web pages, images, files, etc. It is a safe and idempotent method, meaning it does not modify the state of the server and can be repeated multiple times without changing the result.
+
+   **POST:** POST requests are used to submit data to be processed to a specified resource. It is often used when submitting form data or uploading files to a server. Unlike GET requests, POST requests can cause modifications to the server's state, such as creating a new resource or updating existing data. POST requests are not idempotent because submitting the same data multiple times can result in the creation of multiple resources or different outcomes.
+
+   **PUT:** PUT requests are used to update or replace existing data at a specified resource or create a new resource if it does not exist. It is similar to POST in that it can modify the server's state, but unlike POST, PUT requests are idempotent. This means that sending the same PUT request multiple times will have the same result, and it will not cause additional changes beyond the initial update.
+
+   **DELETE:** DELETE requests are used to remove a specified resource from the server. When a client sends a DELETE request, it instructs the server to delete the resource identified by the request URL. Like PUT requests, DELETE requests are also idempotent. Sending the same DELETE request multiple times will have the same effect, removing the resource from the server each time.
+
    - **GET:** Retrieves data from a specified resource, safe and idempotent.
    - **POST:** Submits data to be processed to a specified resource, not idempotent.
    - **PUT:** Updates or replaces existing data at a specified resource, idempotent.
