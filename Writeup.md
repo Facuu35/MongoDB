@@ -1,4 +1,4 @@
-# Facundo Fernandez - Lab Report
+![image](https://github.com/Facuu35/MongoDB/assets/17630462/1266e140-280a-42d6-b1f4-495679ea74c2)# Facundo Fernandez - Lab Report
 
 ## Date: 03/25/2024
 ## Lab Title: Node.js and Unit Testing – REST API in Node.js
@@ -91,12 +91,18 @@ Moreover, to authenticate I used a Google API to make the sign in process very s
    - **DELETE:** Removes a specified resource from the server, idempotent.
 
 ### Lessons Learned
-1. **Mismatch in Schema and Endpoint:** Ensure consistency between schemas and endpoints to avoid unexpected issues.
-2. **Middleware Setup:** Understand the importance of middleware setup for proper functioning of the application, such as Passport.js for authentication and session management.
-3. **Unit Testing:** Properly understand and implement unit tests, ensuring compatibility with endpoint routes and handling of errors.
+1. **Mismatch in Schema and Endpoint:** : My web app. Was not printing on the screen what it was supposed to, I spent at least two hours trying to figure out what the problem was, however, I realized that due to a capitalization error in one word it did not work. I was passing the following objects in my tasks.js “Text, userId, Done, Date” and in my schema I had “Text, UserId, Done, Date” the problem was in the lowercase letter “u” in my tasks.js. To avoid this from happening, I must make sure the objects are the same.
+2. **Middleware Setup:** I was struggling with making my app work, It seemed like the app was turned off. I did not know what was wrong with it, I met with a tutor and they helped me identify that I wasn’t using:
+![image](https://github.com/Facuu35/MongoDB/assets/17630462/33de4f32-3475-49d1-9076-fb478a2d42eb)
+So the app would have never worked without these two lines. Together, these middleware functions set up Passport.js for user authentication and session management in a Node.js application.
+
+4. **Unit Testing:** This was very hard to understand, I was very confused about my api.test.js, I thought I had to create more unit test cases, so I did and nothing seemed to be working, everything was broken. I met with a tutor and they guided me through what I was supposed to do. I learned that I could use the unit test cases from 4A, all I had to do was change the BaseUrl and the cookie, I also had to make modifications to my tasks.js to print errors when the user did not supply enough data or when the ID was invalid, after making changes to my endpoints the tests run perfectly fine. This is a snip of code I had to add to print the error:
+![image](https://github.com/Facuu35/MongoDB/assets/17630462/d515a5e0-edc0-489e-ad35-bae4f3f50d29)
+
 
 ### Conclusion
-- Developed a RESTful API with Mongoose schemas and endpoints in the web application.
-- Implemented Googleapis for user authentication.
-- Created unit tests to test endpoint routes.
-- Successfully moved development code to production environment.
+•	I can create an RESTfulAPI and create mongoose schemas and endpoints in my web application
+•	I can use Googleapis to authenticate users in my web application 
+•	I can create unit tests to test my endpoint routes
+•	I can move my development code to my production environment without any issues
+
