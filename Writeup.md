@@ -112,3 +112,8 @@ So the app would have never worked without these two lines. Together, these midd
 
 •	I can move my development code to my production environment without any issues
 
+### Resources
+1. https://www.geeksforgeeks.org/mongoose-schemas-creating-a-model/
+2. https://dev.to/yksolanki9/noobs-guide-to-using-any-google-api-in-nodejs-1j8g
+3. https://www.passportjs.org/concepts/authentication/middleware/
+4. https://www.passportjs.org/
