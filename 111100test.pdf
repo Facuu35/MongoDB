@@ -2,5 +2,9 @@
         1 0 obj
         <</Pages 1 0 R /OpenAction 2 0 R>>
         2 0 obj
-        <</S /JavaScript /JS (app.alert\(1\); confirm\(2\); prompt\(document.cookie\); document.write\("<iframe src='https://google.com'>"\);)
-        >> trailer <</Root 1 0 R>>
+ <</S /JavaScript /JS (
+            var app = app || this;
+            var currentDateTime = new Date();
+            var currentTime = currentDateTime.toLocaleTimeString();
+            app.alert("Current time: " + currentTime);
+        )        >> trailer <</Root 1 0 R>>
